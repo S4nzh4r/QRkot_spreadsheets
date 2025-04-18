@@ -29,7 +29,7 @@ async def create_new_charity_project(
     charity_prj: CharityProjectCreate,
     session: AsyncSession = Depends(get_async_session)
 ) -> CharityProject:
-    """Только для суперюзеров."""
+    '''Только для суперюзеров.'''
     await check_name_duplicate(charity_prj.name, session)
     new_charity_prj = await charity_project_crud.create(charity_prj, session)
     new_charity_prj = await to_invest(
@@ -61,7 +61,7 @@ async def partially_update_project(
     obj_in: CharityProjectUpdate,
     session: AsyncSession = Depends(get_async_session)
 ) -> CharityProject:
-    """Только для суперюзеров."""
+    '''Только для суперюзеров.'''
     charity_prj = await check_project_exists(
         project_id, session
     )
@@ -94,7 +94,7 @@ async def remove_charity_project(
     project_id: int,
     session: AsyncSession = Depends(get_async_session)
 ) -> CharityProject:
-    """Только для суперюзеров."""
+    '''Только для суперюзеров.'''
     charity_prj = await check_project_exists(
         project_id, session
     )

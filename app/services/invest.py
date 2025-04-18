@@ -15,7 +15,7 @@ async def check_obj_amount(
         session: AsyncSession,
         crud_obj: CRUDBase
 ) -> None:
-    """Функция для проверки не достигла ли требоваемая сумма."""
+    '''Функция для проверки не достигла ли требоваемая сумма.'''
     if db_obj.invested_amount == db_obj.full_amount:
         await crud_obj.close_object(db_obj, session)
 
@@ -26,8 +26,8 @@ async def to_invest(
         crud_obj_1: Union[CRUDCharityProject, CRUDDonation],
         crud_obj_2: Union[CRUDCharityProject, CRUDDonation]
 ) -> ModelType:
-    """Функция для распределения свободных
-    донатов после создания одного из двух проектов."""
+    '''Функция для распределения свободных
+    донатов после создания одного из двух проектов.'''
 
     # Получаем список не закрытых проектов или пожертвований.
     not_fully_invested = await crud_obj_2.get_all_not_fully_invested(

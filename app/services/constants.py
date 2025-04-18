@@ -22,7 +22,7 @@ INFO = {
     'auth_provider_x509_cert_url': settings.auth_provider_x509_cert_url,
     'client_x509_cert_url': settings.client_x509_cert_url
 }
-FORMAT = "%Y/%m/%d %H:%M:%S"
+FORMAT = '%Y/%m/%d %H:%M:%S'
 ROW_COUNT = 100
 COLUMN_COUNT = 11
 SHEET_ID = 0

@@ -32,7 +32,7 @@ async def set_user_permissions(
         service.permissions.create(
             fileId=spreadsheet_id,
             json=permissions_body,
-            fields="id"
+            fields='id'
         ))
 
 
